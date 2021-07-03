@@ -1,9 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectCollection } from "../../redux/shop/shop.selector";
-import CollectionItem from "../../components/collection-item/collection-item.component";
-import "./collection.styles.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import CollectionItem from '../../components/collection-item/collection-item.component';
+import { selectCollection } from '../../redux/shop/shop.selector';
+import './collection.styles.scss';
 
 const CollectionPage = ({ collection, match }) => {
   const { title, items } = collection;
@@ -20,9 +19,8 @@ const CollectionPage = ({ collection, match }) => {
   );
 };
 
-const mapStateToProps = (_, ownProps) =>
-  createStructuredSelector({
-    collection: selectCollection(ownProps.match.params.collectionId),
-  });
+const mapStateToProps = (state, ownProps) => ({
+  collection: selectCollection(ownProps.match.params.collectionId)(state),
+});
 
 export default connect(mapStateToProps)(CollectionPage);
