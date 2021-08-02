@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Route } from "react-router-dom";
-import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container";
-import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
-import CollectionsPageContainer from "../collection/collection.container";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
+import CollectionsPageContainer from '../collection/collection.container';
 
 const ShopPage = ({ match, updateCollections }) => {
   useEffect(() => {
